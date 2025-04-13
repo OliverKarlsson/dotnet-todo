@@ -23,3 +23,15 @@ export const postUndoTodo = async (id: string) => {
     await fetch(`${baseUrl}/todos/${id}/undo-complete`, { method: "post" })
   ).json();
 };
+
+export const postCreateTodo = async (name: string) => {
+  await (
+    await fetch(`${baseUrl}/todos/create`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name }),
+    })
+  ).json();
+};
