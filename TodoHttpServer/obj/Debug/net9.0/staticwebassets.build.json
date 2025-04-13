@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Z9qRUjZw0VCdp0PWAhp+kwmvBMJ88lMtNzPfDd14OJs=",
+  "Source": "TodoHttpServer",
+  "BasePath": "_content/TodoHttpServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
