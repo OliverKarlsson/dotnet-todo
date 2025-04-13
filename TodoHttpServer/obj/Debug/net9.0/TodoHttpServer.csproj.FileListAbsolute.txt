@@ -32,3 +32,4 @@ C:\Users\Oliver\source\repos\OliverKarlsson\dotnet-todo\TodoHttpServer\obj\Debug
 C:\Users\Oliver\source\repos\OliverKarlsson\dotnet-todo\TodoHttpServer\obj\Debug\net9.0\TodoHttpServer.pdb
 C:\Users\Oliver\source\repos\OliverKarlsson\dotnet-todo\TodoHttpServer\obj\Debug\net9.0\TodoHttpServer.genruntimeconfig.cache
 C:\Users\Oliver\source\repos\OliverKarlsson\dotnet-todo\TodoHttpServer\obj\Debug\net9.0\ref\TodoHttpServer.dll
+C:\Users\Oliver\source\repos\OliverKarlsson\dotnet-todo\TodoHttpServer\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
