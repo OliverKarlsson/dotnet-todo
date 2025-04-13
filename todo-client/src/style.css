@@ -36,6 +36,10 @@ h2 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  > div {
+    width: 500px;
+  }
 }
 
 .card {
@@ -54,6 +58,16 @@ ul {
 
 li {
   display: flex;
+  padding: 0.2em 0;
+}
+
+button {
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.todo-name {
+  width: 150px;
 }
 
 .todo-creation-date {
