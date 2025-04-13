@@ -5,6 +5,7 @@ import {
   ALL_TODOS_CONTENT_ID,
   COMPLETED_TODOS_CONTENT_ID,
 } from "./constants.ts";
+import { fetchTodos } from "./fetchTodos.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
@@ -14,3 +15,5 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     ${Card({ title: "Completed todos", contentId: COMPLETED_TODOS_CONTENT_ID })}
   </div>
 `;
+
+fetchTodos();
