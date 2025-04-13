@@ -1,4 +1,5 @@
-using TodoHttpServer.Endpoints;
+using TodoHttpServer.CommandEndpoints;
+using TodoHttpServer.QueryEndpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 

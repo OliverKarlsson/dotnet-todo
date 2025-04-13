@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TodoHttpServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9180067a3905f0c4a7ffe3f77fb20778d995f987")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33d800fe6dec3cacddd7c83a183ad7c29d965c42")]
 [assembly: System.Reflection.AssemblyProductAttribute("TodoHttpServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TodoHttpServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

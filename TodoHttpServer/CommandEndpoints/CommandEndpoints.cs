@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace TodoHttpServer.Endpoints
+namespace TodoHttpServer.CommandEndpoints
 {
     public static class CommandEndpoints
     {
