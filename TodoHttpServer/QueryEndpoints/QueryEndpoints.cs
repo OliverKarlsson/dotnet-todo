@@ -7,8 +7,6 @@ namespace TodoHttpServer.QueryEndpoints
     {
         public static void MapQueryEndpoints(this IEndpointRouteBuilder app)
         {
-            app.MapGet("/queries/example", () => "This is a query endpoint");
-
             app.MapGet("/todos", async () =>
             {
                 var todos = new TodoItemModel[]

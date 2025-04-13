@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TodoHttpServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a806e64ee200e15afb1e62b51865dfc5fb44328b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fa7a265ea4465f00a8f03fa5d77534fc46b5c83")]
 [assembly: System.Reflection.AssemblyProductAttribute("TodoHttpServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TodoHttpServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
