@@ -28,6 +28,13 @@ namespace TodoHttpServer.QueryEndpoints
                 
                 return Results.Ok(todos);
             });
+
+            app.MapGet("/todos/updates", async ([FromServices] TodoRepository repository) =>
+            {
+                var todos = await repository.GetTodoUpdatesHistory();
+
+                return Results.Ok(todos);
+            });
         }
     }
 

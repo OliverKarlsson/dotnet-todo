@@ -72,6 +72,15 @@ public class TodoRepository
         return await _dbConnection.QueryAsync<TodoItemModel>(query);
     }
 
+    public async Task<IEnumerable<TodoUpdateHistoryItem>> GetTodoUpdatesHistory()
+    {
+        var query = @"SELECT A.EventTimeStamp, A.Status, A.Id, B.Name
+                    FROM Todos_Status_Updates A
+                    JOIN Todos B ON A.TodoId = B.Id";
+
+        return await _dbConnection.QueryAsync<TodoUpdateHistoryItem>(query);
+    }
+
     public async Task CreateTodoStatusUpdateAsync(int todoId, string status)
     {
         var eventTimeStamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");

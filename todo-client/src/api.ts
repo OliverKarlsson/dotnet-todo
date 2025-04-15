@@ -12,6 +12,10 @@ export const getCompletedTodos = async () => {
   return await (await fetch(`${baseUrl}/todos/completed`)).json();
 };
 
+export const getTodosUpdates = async () => {
+  return await (await fetch(`${baseUrl}/todos/updates`)).json();
+};
+
 export const postCompleteTodo = async (id: string) => {
   await (
     await fetch(`${baseUrl}/todos/${id}/complete`, { method: "post" })
