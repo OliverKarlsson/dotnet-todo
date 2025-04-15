@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using TodoHttpServer.QueryEndpoints.Model;
 
 namespace TodoHttpServer.QueryEndpoints
@@ -7,40 +8,26 @@ namespace TodoHttpServer.QueryEndpoints
     {
         public static void MapQueryEndpoints(this IEndpointRouteBuilder app)
         {
-            app.MapGet("/todos", async () =>
+            app.MapGet("/todos", async ([FromServices] TodoRepository repository) =>
             {
-                var todos = new TodoItemModel[]
-                {
-                    new TodoItemModel { Id = 1, Name = "Buy groceries", CreationDate = "2025-01-01", Completed = true },
-                    new TodoItemModel { Id = 2, Name = "Clean desk", CreationDate = "2025-01-02", Completed = true },
-                    new TodoItemModel { Id = 3, Name = "Water plants", CreationDate = "2025-01-03", Completed = false },
-                    new TodoItemModel { Id = 4, Name = "Finish report", CreationDate = "2025-01-04", Completed = false },
-                    new TodoItemModel { Id = 5, Name = "Plan vacation", CreationDate = "2025-01-05", Completed = false }
-                };
+                var todos = await repository.GetAllTodosAsync();
+                
                 return Results.Ok(todos);
             });
 
-            app.MapGet("/todos/active", async () =>
+            app.MapGet("/todos/active", async ([FromServices] TodoRepository repository) =>
             {
-                var todos = new TodoItemModel[]
-                {
-                    new TodoItemModel { Id = 3, Name = "Water plants", CreationDate = "2025-01-03", Completed = false },
-                    new TodoItemModel { Id = 4, Name = "Finish report", CreationDate = "2025-01-04", Completed = false },
-                    new TodoItemModel { Id = 5, Name = "Plan vacation", CreationDate = "2025-01-05", Completed = false }
-                };
+                var todos = await repository.GetAllActiveTodosAsync();
+                 
                 return Results.Ok(todos);
             });
 
-            app.MapGet("/todos/completed", async () =>
+            app.MapGet("/todos/completed", async ([FromServices] TodoRepository repository) =>
             {
-                var todos = new TodoItemModel[]
-                {
-                    new TodoItemModel { Id = 1, Name = "Buy groceries", CreationDate = "2025-01-01", Completed = true },
-                    new TodoItemModel { Id = 2, Name = "Clean desk", CreationDate = "2025-01-02", Completed = true },
-                };
+                var todos = await repository.GetAllCompletedTodosAsync();
+                
                 return Results.Ok(todos);
             });
-
         }
     }
 
