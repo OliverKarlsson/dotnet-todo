@@ -4,7 +4,7 @@ export type TodoItemProps = {
   id: string;
   name: string;
   creationDate: string;
-  completed: boolean;
+  status: "Completed" | "Active";
 };
 
 type ActionButtonProps = {
@@ -17,21 +17,22 @@ const undoButton = ({ id }: ActionButtonProps) =>
 const completeButton = ({ id }: ActionButtonProps) =>
   `<button onclick="completeTodo('${id}')">Complete</button>`;
 
-export const TodoItem = ({
-  name,
-  creationDate,
-  completed,
-  id,
-}: TodoItemProps) =>
+export const TodoItem = ({ name, creationDate, status, id }: TodoItemProps) =>
   `<li>
 <span class="todo-name">${name}</span>
 <span class="todo-creation-date">${creationDate}</span>
-<span>${completed ? `✅` : `❌`}</span>
-${completed ? undoButton({ id }) : completeButton({ id })}
+<span>${status === "Active" ? `🔳` : `✅`}</span>
+${status === "Active" ? completeButton({ id }) : undoButton({ id })}
 </li>`;
 
 //@ts-ignore
-window.undoTodo = (id) => postUndoTodo(id);
+window.undoTodo = (id) => {
+  postUndoTodo(id);
+  window.location.reload();
+};
 
 //@ts-ignore
-window.completeTodo = (id) => postCompleteTodo(id);
+window.completeTodo = (id) => {
+  postCompleteTodo(id);
+  window.location.reload();
+};

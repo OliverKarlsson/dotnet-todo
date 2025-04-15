@@ -32,13 +32,23 @@ var app = builder.Build();
 
 void InitializeDatabase(IDbConnection connection)
 {
-    var createTableQuery = @"
+    var createTodosQuery = @"
         CREATE TABLE IF NOT EXISTS Todos (
             Id INTEGER PRIMARY KEY AUTOINCREMENT,
             Name TEXT NOT NULL,
             CreationDate TEXT NOT NULL
         )";
-    connection.Execute(createTableQuery);
+    connection.Execute(createTodosQuery);
+
+    var createTodosStatusQuery = @"
+        CREATE TABLE IF NOT EXISTS Todos_Status_Updates (
+            Id INTEGER PRIMARY KEY AUTOINCREMENT,
+            TodoId INTEGER NOT NULL,
+            Status TEXT NOT NULL, -- e.g., 'Completed', 'Uncompleted'
+            EventTimeStamp TEXT NOT NULL,
+            FOREIGN KEY (TodoId) REFERENCES Todos(Id)
+        )";
+    connection.Execute(createTodosStatusQuery);
 }
 
 using (var scope = app.Services.CreateScope())
